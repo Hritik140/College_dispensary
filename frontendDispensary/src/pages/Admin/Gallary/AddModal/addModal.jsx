@@ -13,9 +13,10 @@ const AddModal = (props) => {
     data.append('file', files[0]);
 
     data.append('upload_preset', "college_dispensary");
+    const cloudName = ""    // your cloud name
     setLoader(true)
     try {
-      const response = await axios.post("https://api.cloudinary.com/v1_1/mashhuudanny/image/upload", data);
+      const response = await axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, data);
       const imageUrl = response.data.url;
       setImage(imageUrl)
 
