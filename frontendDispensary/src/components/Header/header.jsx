@@ -67,21 +67,21 @@ const Header = (props) => {
         <div className='header'>
             <div className='header-college-details'>
                 <div className='header-college-details-left'>
-                    <img className='header-college-details-left-logo' src='https://static.vecteezy.com/system/resources/previews/018/902/537/original/university-college-school-badge-logo-design-image-education-badge-logo-design-university-high-school-emblem-free-vector.jpg' alt='colegeLogo' />
+                    <img className='header-college-details-left-logo' src='https://th.bing.com/th/id/OIP.fUG5VxNo5nc4vIhJrZIBwwAAAA?rs=1&pid=ImgDetMain' alt='colegeLogo' />
                     <div>
                         <div className='header-college-details-name'>राष्ट्रीय प्रौद्योगिकी संस्थान,</div>
-                        <div className='header-college-details-place'>कॉलेज </div>
-                        <div className='header-college-details-name'>XYZ Institute of Technology, </div>
-                        <div className='header-college-details-place'>Delhi </div>
+                        <div className='header-college-details-place'>जमशेदपुर</div>
+                        <div className='header-college-details-name'>National Institute of Technology, </div>
+                        <div className='header-college-details-place'>Jamshedpur</div>
                     </div>
                 </div>
 
                 <div className='header-college-details-right'>
                     <div className='header-college-social-media'>
-                        <a target='_blank' href='https://www.youtube.com/@nationalinstituteoftechnol7593'><img src='https://cdn-icons-png.flaticon.com/128/3670/3670147.png' className='header-social-media-image' /></a>
-                        <a target='_blank' href='https://www.facebook.com/nitukofficial/'><img src='https://cdn-icons-png.flaticon.com/128/733/733547.png' className='header-social-media-image' /></a>
-                        <a target='_blank' href='https://x.com/NIT_Uttarakhand'><img src='https://cdn-icons-png.flaticon.com/128/5968/5968830.png' className='header-social-media-image' /></a>
-                        <a target='_blank' href='https://www.instagram.com/nitukofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='><img src='https://th.bing.com/th/id/OIP.0wjhvLpjGf_-r-1lqG3QAQHaHw?rs=1&pid=ImgDetMain' className='header-social-media-image' /></a>
+                        <a target='_blank' href='https://www.youtube.com/@nitjamshedpurofficial'><img src='https://cdn-icons-png.flaticon.com/128/3670/3670147.png' className='header-social-media-image' /></a>
+                        <a target='_blank' href='https://www.facebook.com/NITJamshedpurOfficial/'><img src='https://cdn-icons-png.flaticon.com/128/733/733547.png' className='header-social-media-image' /></a>
+                        <a target='_blank' href='https://x.com/NIT_JAMSHEDPUR'><img src='https://cdn-icons-png.flaticon.com/128/5968/5968830.png' className='header-social-media-image' /></a>
+                        <a target='_blank' href='https://www.instagram.com/nitjamshedpur_official/?source=omni_redirect'><img src='https://th.bing.com/th/id/OIP.0wjhvLpjGf_-r-1lqG3QAQHaHw?rs=1&pid=ImgDetMain' className='header-social-media-image' /></a>
                     </div>
                     <input type='text' className='header-input-tags' />
                 </div>
@@ -127,7 +127,7 @@ const Header = (props) => {
 
             {
                 location.pathname==="/" && <div className='header-banner'>
-                <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0JtwxcjNmUy0HNfNwUA4bbdNgAExlepqgG2yDgpKR2emOMi79JnaSHAFMHp5FAWbhrA&usqp=CAU"} className='header-banner-image' />
+                <img src={"https://i.ytimg.com/vi/DhPP4F6hix8/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGGUgZChOMA8=&rs=AOn4CLAilevkYLpx4CiNCQM28kKKsrH4gg"} className='header-banner-image' />
             </div>
             }
 
