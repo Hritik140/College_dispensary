@@ -7,7 +7,7 @@ const Facility = (props) => {
 
   const fetchData = async () => {
     props.showLoader()
-    await axios.get('http://localhost:4000/api/facility/get').then((response) => {
+    await axios.get('https://college-dispensary-pro.onrender.com/api/facility/get').then((response) => {
       
       setData(response.data.facility);
     }).catch(err => {
