@@ -11,7 +11,7 @@ app.use(cookieparser())
 
 app.use(cors({
     credentials:true,
-    origin:"http://localhost:5173"
+    origin:"https://college-dispensary-pro1.onrender.com"
 }));
 
 require('./connection');
