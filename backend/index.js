@@ -32,6 +32,13 @@ app.use('/api/notification',notificationRoutes)
 app.use('/api/gallary',gallaryRoutes)
 app.use('/api/history',historyRoutes)
 
+app.use(express.static(path.join(__dirname, '../frontendDispensary/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontendDispensary/build', 'index.html'));
+});
+
+
 
 app.listen(process.env.PORT,()=>{
     console.log("Successfully running on port",process.env.PORT)
