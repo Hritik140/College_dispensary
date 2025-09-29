@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './facility.css'
 import axios from 'axios';
+import { API_URL } from "../../config";
 const Facility = (props) => {
 
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     props.showLoader()
-    await axios.get('http://localhost:4000/api/facility/get').then((response) => {
+    await axios.get(`${API_URL}/api/facility/get`).then((response) => {
       
       setData(response.data.facility);
     }).catch(err => {

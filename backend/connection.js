@@ -1,7 +1,10 @@
+require('dotenv').config(); // Load environment variables
+
+
 const mongoose = require('mongoose')
 
 
-const mongoDBURL = "" ; // Add your database URL
+const mongoDBURL = process.env.mongoDBURL;
 mongoose.connect(mongoDBURL)
     .then(res=>{
         console.log("DataBase Connected Successfully")

@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './forgotModal.css'
 import { ToastContainer,toast } from 'react-toastify';
 import axios from 'axios';
+import { API_URL } from "../../config";
 const ForgotModal = (props) => {
 
     const [step, setStep] = useState(1);
@@ -15,7 +16,7 @@ const ForgotModal = (props) => {
     const sendOTPToMail = async()=>{
         if (inputField.email.trim().length === 0) return toast.error("Please Enter Email")
         props.showLoader()
-        await axios.post('http://localhost:4000/api/auth/send-otp',{email:inputField.email}).then((response)=>{
+        await axios.post(`${API_URL}/api/auth/send-otp`,{email:inputField.email}).then((response)=>{
             console.log(response)
             setStep(2);
             setButtonText("Enter the OTP")
@@ -33,7 +34,7 @@ const ForgotModal = (props) => {
         if (inputField.otp.trim().length === 0) return toast.error("Please Enter OTP")
         props.showLoader()
 
-        await axios.post('http://localhost:4000/api/auth/verify-otp',{email:inputField.email,otp:inputField.otp}).then((response)=>{
+        await axios.post(`${API_URL}/api/auth/verify-otp`,{email:inputField.email,otp:inputField.otp}).then((response)=>{
             setStep(3);
             setButtonText("Update New Password")
             alert(response.data.message)
@@ -50,7 +51,7 @@ const ForgotModal = (props) => {
         if (inputField.newPassword.trim().length === 0) return toast.error("Please Enter new password")
         props.showLoader()
         
-        await axios.post('http://localhost:4000/api/auth/reset-password',{email:inputField.email,newPassword:inputField.newPassword}).then((response)=>{
+        await axios.post(`${API_URL}/api/auth/reset-password`,{email:inputField.email,newPassword:inputField.newPassword}).then((response)=>{
             alert(response.data.message)
             props.closeModal()
         }).catch(err => {

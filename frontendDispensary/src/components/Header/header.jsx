@@ -4,6 +4,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link, useLocation,useNavigate } from 'react-router-dom';
 import { ToastContainer,toast } from 'react-toastify';
 import axios from 'axios';
+import { API_URL } from "../../config";
 const Header = (props) => {
 
     const location = useLocation();
@@ -22,7 +23,7 @@ const Header = (props) => {
     }
 
     const fetchEvents = async()=>{
-        await axios.get('http://localhost:4000/api/notification/get').then(response=>{
+        await axios.get(`${API_URL}/api/notification/get`).then(response=>{
             console.log("fetching data")
             setEvenets(response.data.notifications);
         }).catch(err=>{
@@ -50,7 +51,7 @@ const Header = (props) => {
     }
     const handleLogout = async()=>{
         props.showLoader();
-        await axios.post('http://localhost:4000/api/auth/logout',{},{withCredentials:true}).then(response=>{
+        await axios.post(`${API_URL}/api/auth/logout`,{},{withCredentials:true}).then(response=>{
             console.log(response)
             props.handleLogin(false)
             localStorage.clear();

@@ -5,6 +5,7 @@ import Modal from '../../components/Modal/modal';
 import StudentModal from './StudentModal/studentModal';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { API_URL } from '../../config';
 const StudentDashboard = (props) => {
     let userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
     const [history, setHistory] = useState([]);
@@ -15,7 +16,7 @@ const StudentDashboard = (props) => {
     const fetchData = async () => {
         props.showLoader();
 
-        await axios.get(`http://localhost:4000/api/history/get?roll=${userInfo?.roll}`, { withCredentials: true }).then(resp => {
+        await axios.get(`${API_URL}/api/history/get?roll=${userInfo?.roll}`, { withCredentials: true }).then(resp => {
             console.log(resp)
             setHistory(resp.data.history)
         }).catch(err => {

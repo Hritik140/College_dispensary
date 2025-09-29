@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './gallary.css'
 import axios from 'axios'
+import { API_URL } from "../../config";
 const Gallary = (props) => {
 
 
@@ -10,7 +11,7 @@ const Gallary = (props) => {
 
     const fetchData = async () => {
       props.showLoader()
-      await axios.get('http://localhost:4000/api/gallary/get').then((response) => {
+      await axios.get(`${API_URL}/api/gallary/get`).then((response) => {
         setData(response.data.images)
       }).catch(err => {
         console.log(err)

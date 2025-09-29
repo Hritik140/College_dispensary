@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './staff.css'
 import TableComp from '../Table/tableComp'
 import axios from 'axios'
+import { API_URL } from "../../config";
 const Staff = (props) => {
   const staffHeader = ["Name","Designation","Email Id","Contact No."]
 
@@ -16,7 +17,7 @@ const Staff = (props) => {
 
   const fetchData = async()=>{
     props.showLoader();
-    await axios.get("http://localhost:4000/api/auth/get-staff").then((respnse)=>{
+    await axios.get(`${API_URL}/api/auth/get-staff`).then((respnse)=>{
      
       getFormattedData(respnse.data.staffs)
     }).catch(err=>{
