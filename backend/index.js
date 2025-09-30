@@ -14,7 +14,9 @@ app.use(cors({
     origin:process.env.CLIENT_URL.replace(/\/$/,'')
 }));
 
-require('./connection');
+const connectDB = require('./connection');
+connectDB();
+
 
 const userRoutes = require('./Routes/user');
 const facilityRoutes = require('./Routes/facility')
