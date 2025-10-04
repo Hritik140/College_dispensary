@@ -32,7 +32,7 @@ const RegisterStudent = (props) => {
     const handleSearch = async()=>{
         if (searchStudent.trim().length === 0) return toast.error("Please enter correct roll number.");
         props.showLoader();
-        await axios.get(`http://localhost:4000/api/auth/get-student-by-roll/${searchStudent}`,{withCredentials:true}).then(resp=>{
+        await axios.get(`https://college-dispensary.vercel.app/api/auth/get-student-by-roll/${searchStudent}`,{withCredentials:true}).then(resp=>{
             console.log(resp)
             // toast.success(resp.data.message);
             setStudentDetail({...studentDetail,...resp.data.student})
@@ -49,7 +49,7 @@ const RegisterStudent = (props) => {
         if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Mobile No and Roll cant be empty");
         props.showLoader();
         const {_id,updatedAt,...student} = {...studentDetail};
-        await axios.put(`http://localhost:4000/api/auth/update-student/${_id}`,student,{withCredentials:true}).then(resp=>{
+        await axios.put(`https://college-dispensary.vercel.app/api/auth/update-student/${_id}`,student,{withCredentials:true}).then(resp=>{
             console.log(resp)
             toast.success(resp.data.message);
         }).catch(err => {
@@ -65,7 +65,7 @@ const RegisterStudent = (props) => {
     const registerStudent = async()=>{
         if(studentDetail.name.trim().length===0 || studentDetail.email.trim().length===0 || studentDetail.roll.trim().length===0 || studentDetail.mobileNo.trim().length===0) return toast.error("Name, Mobile No, Email and Roll cant be empty");
         props.showLoader();
-        await axios.post('http://localhost:4000/api/auth/registerStudentByStaff',studentDetail,{withCredentials:true}).then(response=>{
+        await axios.post('https://college-dispensary.vercel.app/api/auth/registerStudentByStaff',studentDetail,{withCredentials:true}).then(response=>{
             toast.success(response.data.message);
         }).catch(err => {
             console.log(err)
