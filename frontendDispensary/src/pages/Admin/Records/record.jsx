@@ -39,7 +39,7 @@ const Record = (props) => {
 
     const fetchData = async () => {
         props.showLoader()
-        await axios.get(`http://localhost:4000/api/history/get-history?month=${selectedMonth}&year=${selectedYear}`, { withCredentials: true }).then(response => {
+        await axios.get(`https://college-dispensary.vercel.app/api/history/get-history?month=${selectedMonth}&year=${selectedYear}`, { withCredentials: true }).then(response => {
             console.log(response)
             setData(response.data.history)
         }).catch(err => {
@@ -90,7 +90,7 @@ const Record = (props) => {
     const handleClick = async()=>{
         if(studentRoll.trim().length===0) return toast.error("Please Enter Correct Roll No.");
         props.showLoader()
-        await axios.get(`http://localhost:4000/api/history/get?roll=${studentRoll}`,{withCredentials:true}).then(resp=>{
+        await axios.get(`https://college-dispensary.vercel.app/api/history/get?roll=${studentRoll}`,{withCredentials:true}).then(resp=>{
             console.log(resp)
             setAllRecordModal(true)
             setSelecetedAllDetaisl(resp.data.history)
