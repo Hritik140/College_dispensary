@@ -28,7 +28,7 @@ const AdminGallary = (props) => {
 
     const fetchData = async () => {
         props.showLoader();
-        await axios.get('http://localhost:4000/api/gallary/get').then(resp => {
+        await axios.get('https://college-dispensary.vercel.app/api/gallary/get').then(resp => {
             console.log(resp)
             setData(resp.data.images)
         }).catch(err => {
